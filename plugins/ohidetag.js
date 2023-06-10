@@ -15,9 +15,9 @@ const fkontak = {
 }
      conn.sendMessage(m.chat, { text: text, mentions: participants.map(a => a.id) }, {quoted:m})
 }
-handler.help = ['oh <pesan>']
+handler.help = ['otag <pesan>']
 handler.tags = ['group']
-handler.command = /^(oh|ohidetag)$/i
+handler.command = /^(otag|ohidetag)$/i
 
 handler.group = true
 handler.owner = true
