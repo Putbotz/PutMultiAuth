@@ -20,7 +20,6 @@ handler.tags = ['group']
 handler.command = /^(oh|ohidetag)$/i
 
 handler.group = true
-handler.admin = true
 handler.owner = true
 
 module.exports = handler
