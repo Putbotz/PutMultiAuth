@@ -8,9 +8,9 @@ let handler = async(m, { conn, text, participants }) => {
 TagAll Members By wa.me/601169466091`
                 conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )
 }
-handler.help = ['ta <pesan>']
+handler.help = ['tagall <pesan>']
 handler.tags = ['group']
-handler.command = /^(ta)$/i
+handler.command = /^(tagall)$/i
 
 handler.group = true
 handler.admin = true
