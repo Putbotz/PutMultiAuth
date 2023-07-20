@@ -26,11 +26,11 @@ item1.TEL;waid=${numberowner}:${numberowner}@s.whatsapp.net
 item1.X-ABLabel:Nomor Creator Bot 
 item2.EMAIL;type=INTERNET:${gmail}
 item2.X-ABLabel:Email Owner
-item3.ADR:;;🇮🇩 Indonesia;;;;
+item3.ADR:;;🇲🇾 Malaysia;;;;
 item3.X-ABADR:ac
-item4.EMAIL;type=INTERNET:support@tioprm.my.id
+item4.EMAIL;type=INTERNET: putbot604@gmail.com
 item4.X-ABLabel:Email Developer 
-item3.ADR:;;🇨🇳 China;;;;
+item3.ADR:;;🇲🇾 Malaysia;;;;
 item3.X-ABADR:ac 
 item5.URL:${instagram}
 item5.X-ABLabel:Website
