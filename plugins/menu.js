@@ -48,7 +48,7 @@ let tags = {
 const defaultMenu = {
   before: `
 Hi %name
-I am an automated system (Putbotz) that can help to do something, search and get data / information only through WhatsApp.
+I am an automated system (Xp bot) that can help to do something, search and get data / information only through WhatsApp.
 
  ◦  *Library:* Baileys
  ◦  *Function:* Assistant
@@ -160,7 +160,7 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
       level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-  conn.sendFile(m.chat, `https://telegra.ph/file/dc5a67d724b016574129b.jpg`, null, text, m)
+  conn.sendFile(m.chat, `https://telegra.ph/file/b8fdaaa9652b708797a48.jpg`, null, text, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
