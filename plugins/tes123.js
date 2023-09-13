@@ -1,6 +1,6 @@
 let handler = async m => {
 
-let intro = `xp bottz onzzz ! (≧∀≦)`
+let intro = `bot qylaaaa onzzz ! (≧∀≦)`
 m.reply(intro)
 }
 handler.customPrefix = /^(tes|tess|test)$/i
