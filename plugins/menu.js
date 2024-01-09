@@ -48,7 +48,7 @@ let tags = {
 const defaultMenu = {
   before: `
 Hi %name
-I am an automated system (Putbotz) that can help to do something, search and get data / information only through WhatsApp.
+I am an automated system (Gebuu) that can help to do something, search and get data / information only through WhatsApp.
 
  ◦  *Library:* Baileys
  ◦  *Function:* Assistant
