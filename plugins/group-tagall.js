@@ -10,7 +10,7 @@ TagAll Members By wa.me/601169466091`
 }
 handler.help = ['ta <pesan>']
 handler.tags = ['group']
-handler.command = /^(ta)$/i
+handler.command = /^(tagall)$/i
 
 handler.group = true
 handler.admin = true
