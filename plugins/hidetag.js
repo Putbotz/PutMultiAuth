@@ -17,7 +17,7 @@ const fkontak = {
 }
 handler.help = ['ht <pesan>']
 handler.tags = ['group']
-handler.command = /^(h)$/i
+handler.command = /^(h|hidetag)$/i
 
 handler.group = true
 handler.admin = true
