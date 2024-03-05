@@ -17,16 +17,15 @@ let levelling = require('../lib/levelling')
 let tags = {
   'main': 'MENU UTAMA',
   'downloader': 'MENU DOWNLOADER',
-  'download': 'SOUNDCLOUD',
   'sticker': 'MENU CONVERT',
   'advanced': 'ADVANCED',
-  'anime': 'MENU ANIME',
   'xp': 'MENU EXP',
   'fun': 'MENU FUN',
   'game': 'MENU GAME',
   'github': 'MENU GITHUB',
   'group': 'MENU GROUP',
   'image': 'MENU IMAGE',
+  'nsfw': 'MENU NSFW',
   'info': 'MENU INFO',
   'internet': 'INTERNET',
   'islam' : 'MENU ISLAMI',
@@ -34,21 +33,17 @@ let tags = {
   'maker': 'MENU MAKER',
   'owner': 'MENU OWNER',
   'Pengubah Suara': 'PENGUBAH SUARA',
-  'premium': 'PREMIUM MENU',
   'quotes' : 'MENU QUOTES',
-  'rpg': 'MENU RPG',
   'stalk': 'MENU STALK',
   'shortlink': 'SHORT LINK',
   'tools': 'MENU TOOLS',
   'anonymous': 'ANONYMOUS CHAT',
-  'admin': 'ADMIN', 
-  'bokep': 'FILE', 
-  '': 'No Category',
+  '': 'NO CATEGORY',
 }
 const defaultMenu = {
   before: `
 Hi %name
-I am an automated system (Putbotz) that can help to do something, search and get data / information only through WhatsApp.
+I am an automated system (WhatsApp Bot) that can help to do something, search and get data / information only through WhatsApp.
 
  ◦  *Library:* Baileys
  ◦  *Function:* Assistant
@@ -71,7 +66,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = await conn.getName(m.sender)
+    let name =  `@${m.sender.split`@`[0]}`
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     const wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
@@ -160,7 +155,21 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
       level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-  conn.sendFile(m.chat, `https://telegra.ph/file/dc5a67d724b016574129b.jpg`, null, text, m)
+  conn.relayMessage(m.chat, {
+  extendedTextMessage:{
+                text: text, 
+                contextInfo: {
+                mentionedJid: [m.sender],
+                     externalAdReply: {
+                        title: date,
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
+                        sourceUrl: 'https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q'
+                    }
+                }, mentions: [m.sender]
+}}, {})
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -174,7 +183,7 @@ handler.exp = 3
 
 module.exports = handler
 
-const more = String.fromCharCode(8206)
+
 function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
