@@ -1,6 +1,6 @@
 let handler = async m => {
 
-let intro = `Wiya Bot`
+let intro = `@wiya_botberbayar🤖`
 m.reply(intro)
 }
 handler.customPrefix = /^(tes|tess|test)$/i
