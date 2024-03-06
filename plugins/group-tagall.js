@@ -1,6 +1,6 @@
 let handler = async(m, { conn, text, participants }) => {
   let teks = `⋙ *TAGALL* ⋘
-\n *${text ? text : 'By Putbotz'}*\n\n`
+\n *${text ? text : 'By yensss 🦢'}*\n\n`
 		      	for (let mem of participants) {
 		            teks += `│◦❒ @${mem.id.split('@')[0]}\n`
 				}
